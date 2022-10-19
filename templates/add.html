@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Task
+{% endblock %}
+
+{% block main %}
+    <form action="/add" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" id="task" name="task" placeholder="Task Description" type="text">
+        </div>
+        <div class="form-group">
+            <select name="priority" class="form-control" id="priority">
+                <option>Low</option>
+                <option>Moderate</option>
+                <option>High</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="due" id="date" placeholder="Due Date" type="date">
+        </div>
+        <button class="btn btn-primary button" type="submit" id="submit">Add Task</button>
+    </form>
+
+    <!--<script>-->
+    <!--    document.querySelector("#task").onclick = function() {-->
+    <!--        if (document.querySelector("#task").value === "") {-->
+    <!--            document.querySelector("#submit").disabled = true;-->
+    <!--        }-->
+    <!--        else if (document.querySelector("#priority").value === "") {-->
+    <!--            document.querySelector("#submit").disabled = true;-->
+    <!--        }-->
+    <!--        else if (document.querySelector("#date").value === "") {-->
+    <!--            document.querySelector("#submit").disabled = true;-->
+    <!--        }-->
+    <!--        else {-->
+    <!--            document.querySelector("#submit").disabled = false;-->
+    <!--        }-->
+    <!--    }-->
+    <!--</script>-->
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Upcoming
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <th class="bold">{{ day[0] }}</th>
+        {% for todo in todos1 %}
+        <tr>
+            <td>{{ todo["task"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table class="table">
+        <th class="bold">{{ day[1] }}</th>
+        {% for todo in todos2 %}
+        <tr>
+            <td>{{ todo["task"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table class="table">
+        <th class="bold">{{ day[2] }}</th>
+        {% for todo in todos3 %}
+        <tr>
+            <td>{{ todo["task"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table class="table">
+        <th class="bold">{{ day[3] }}</th>
+        {% for todo in todos4 %}
+        <tr>
+            <td>{{ todo["task"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table class="table">
+        <th class="bold">{{ day[4] }}</th>
+        {% for todo in todos5 %}
+        <tr>
+            <td>{{ todo["task"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table class="table">
+        <th class="bold">{{ day[5] }}</th>
+        {% for todo in todos6 %}
+        <tr>
+            <td>{{ todo["task"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table class="table">
+        <th class="bold">{{ day[6] }}</th>
+        {% for todo in todo7 %}
+       <tr>
+            <td>{{ todo["task"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div>
+        <br />
+        <em>Shows upcoming tasks that still need to be completed.</em>
+    </div>
+{% endblock %}
+

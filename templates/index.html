@@ -1,0 +1,35 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Tasks
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <tr class="striped">
+            <th>Task Description</th>
+            <th>Priority</th>
+            <th>Due Date</th>
+            <th></th>
+            <th>Completed?</th>
+        </tr>
+        {% for item in items %}
+        <tr class="stripy">
+            <td>{{ item["task"] }}</td>
+            <td>{{ item["priority"] }}</td>
+            <td>{{ item["due"] }}</td>
+            {% if item["late"] == 1 %}
+                <td class="late">⚠️ Late!</td>
+            {% else %}
+                <td></td>
+            {% endif %}
+            {% if item["completed"] == 0 %}
+                <td>No</td>
+            {% else %}
+                <td>Yes</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

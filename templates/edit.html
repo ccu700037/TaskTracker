@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit Task
+{% endblock %}
+
+{% block main %}
+    <form action="/edit" method="post">
+        <div class="form-group">
+            <select name="oldtask" class="form-control">
+                {% for task in tasks %}
+                <option>{{ task["task"] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" id="task" name="task" placeholder="Task Description" type="text">
+        </div>
+        <div class="form-group">
+            <select name="priority" class="form-control" id="priority">
+                <option>Low</option>
+                <option>Moderate</option>
+                <option>High</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="due" id="date" placeholder="Due Date" type="date">
+        </div>
+        <button class="btn btn-primary button" type="submit" id="submit">Edit Task</button>
+    </form>
+    <div>
+        <br />
+        <em>Any fields left blank will not be changed.</em>
+    </div>
+
+{% endblock %}

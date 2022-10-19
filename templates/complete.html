@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Complete
+{% endblock %}
+
+{% block main %}
+    <form action="/complete" method="post">
+        <div class="form-group">
+            <select name="task" class="form-control" id="task">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                {% for row in rows %}
+                <option>{{ row["task"] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <p>Have you completed this task?</p>
+        <div class="form-group">
+            <select name="complete" class="form-control" id="complete">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+        </div>
+        <button class="btn btn-primary button" type="submit">Complete</button>
+    </form>
+{% endblock %}

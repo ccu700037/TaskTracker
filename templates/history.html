@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <tr class="blue-head">
+            <th>Date Added</th>
+            <th>Task Description</th>
+            <th>Priority</th>
+            <th>Due Date</th>
+            <th>Completed?</th>
+        </tr>
+        {% for row in rows %}
+        <tr class="blue-row">
+            <td>{{ row["time"] }} GMT</td>
+            <td>{{ row["task"] }}</td>
+            <td>{{ row["priority"] }}</td>
+            <td>{{ row["due"] }}</td>
+            {% if row["completed"] == 0 %}
+                <td>No</td>
+            {% else %}
+                <td>Yes</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+    <br />
+    <em>Tasks are sorted by date added.</em>
+{% endblock %}
